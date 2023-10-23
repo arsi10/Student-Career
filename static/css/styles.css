@@ -1,0 +1,91 @@
+/* Styles for the placement prediction form */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e6f7ff;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    max-width: 300px;
+    margin: 0 auto;
+    background: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #888;
+}
+
+.content {
+    width: calc(100% - 20px);
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: 0;
+    background: #333;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background: #043b5c71;
+}
+
+.content:hover {
+    border-color: black;
+    border-radius: 10px;
+}
+.content:focus {
+    border-radius: 10px;
+}
+
+.content-num {
+    width:15%;
+    border-radius: 10px;
+}
+
+.content-num:hover {
+    border-color: black;
+    border-radius: 10px;
+}
+.content-num:focus {
+    border-radius: 10px;
+}
+
+/* Result */
+
+h1 {
+    text-align : center;
+    color : #336699;
+    font-family : Verdana;
+}
+name {
+    font-style : italic;
+    font-family : monotype cursiva;
+    color : green;
+    font-size : 20px;
+}
+
+result {
+    font-size : 30px
+}
+
+.res-body {
+    text-align: center;
+}

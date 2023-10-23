@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Career Analysis</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <h2>Enter the following details for Placement Prediction:</h2>
+    <form action="/predict" method="post">
+        <label for="name">Name:</label><br>
+        <input class="content" type="text" id="name" name="name"><br><br>
+
+        <label for="email">Email:</label><br>
+        <input class="content" type="text" id="email" name="email"><br><br>
+
+        CGPA: &nbsp;&nbsp;
+        <input class="content-num" type="number" name="cgpa" min="5" max="10" step="0.1" value="7.5"/><br><br>
+
+        Speaking Skills: &nbsp;&nbsp;
+        <input class="content-num" type="number" name="ss" min="0" max="5" value="2"/><br><br>
+
+        Machine Learning Knowledge: &nbsp;&nbsp;
+        <input class="content-num" type="number" name="ml" min="0" max="5" value="2" /><br><br>
+
+
+        <input type="submit" value="Predict Placement">
+    </form>
+
+</body>
+
+</html>
