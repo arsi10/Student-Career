@@ -2,25 +2,27 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #e6f7ff;
+    background: url("imgs/bg-img.png");
+    
 }
 
 h2 {
     text-align: center;
-    color: #333;
+    color: rgb(14, 216, 223);
 }
 
 form {
-    max-width: 300px;
+    max-width: 400px;
     margin: 0 auto;
     background: #f9f9f9;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
+    align-content: center !important;
 }
 
 label {
-    display: block;
+    display: inline-block;
     margin: 10px 0 5px;
     color: #888;
 }
@@ -57,7 +59,8 @@ input[type="submit"]:hover {
 
 .content-num {
     width:15%;
-    border-radius: 10px;
+    border-radius: 5px;
+    text-align: center;
 }
 
 .content-num:hover {
@@ -68,24 +71,80 @@ input[type="submit"]:hover {
     border-radius: 10px;
 }
 
+
 /* Result */
 
 h1 {
     text-align : center;
-    color : #336699;
+    color : #11e2c6;
     font-family : Verdana;
 }
-name {
+.res-body > p {
+    display:inline-block;
+}
+.name {
     font-style : italic;
     font-family : monotype cursiva;
-    color : green;
+    color : rgb(8, 239, 255);
     font-size : 20px;
+    display: inline;
+    overflow: hidden;
+    border-right: 4px solid rgb(196, 4, 4);
+    padding-right: 2px;
+    white-space: nowrap;
+    animation: 
+      blink .8s infinite;
 }
+
+
+@keyframes blink {
+    from { border-color: white }
+    to { border-color: rgb(196, 4, 4); }
+  }
+
 
 result {
     font-size : 30px
 }
 
 .res-body {
+    text-align: center;
+    color:#ffffff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+    background:#0b090a !important;
+}
+
+button:hover {
+    background: #0adae971;
+}
+
+button {
+    width: 8%;
+    padding: 8px;
+    border: 0;
+    background: #333;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+table {
+    margin: auto;
+    display: table;
+    width: 60%;
+    height: 100%;
+    overflow: hidden;
+    text-align:justify;
+    
+}
+
+td {
+    border:1px solid;
+    padding : 10px 10px 10px 10px;
+}
+
+.colspan {
     text-align: center;
 }
