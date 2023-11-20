@@ -9,25 +9,48 @@
 <body>
     <h2>Enter the following details for Placement Prediction:</h2>
     <form action="/predict" method="post">
+
         <label for="name">Name:</label><br>
         <input class="content" type="text" id="name" name="name"><br><br>
-
-        <label for="email">Email:</label><br>
-        <input class="content" type="text" id="email" name="email"><br><br>
 
         CGPA: &nbsp;&nbsp;
         <input class="content-num" type="number" name="cgpa" min="5" max="10" step="0.1" value="7.5"/><br><br>
 
-        Speaking Skills: &nbsp;&nbsp;
-        <input class="content-num" type="number" name="ss" min="0" max="5" value="2"/><br><br>
+        Internships: &nbsp;&nbsp;
+        <input class="content-num" type="number" name="intern" min="0" max="5" value="2"/><br><br>
 
-        Machine Learning Knowledge: &nbsp;&nbsp;
-        <input class="content-num" type="number" name="ml" min="0" max="5" value="2" /><br><br>
+        Projects: &nbsp;&nbsp;
+        <input class="content-num" type="number" name="projects" min="0" max="5" value="2" /><br><br>
 
+        Certificates: &nbsp;&nbsp;
+        <input class="content-num" type="number" name="certifs" min="0" max="5" value="2" /><br><br>
+
+        Aptitude Score: &nbsp;&nbsp;
+        <input class="content-num" type="number" name="apt" min="0" max="100" step="1" value="50"/><br><br>
+
+        Soft Skill Rating: &nbsp;&nbsp;
+        <input class="content-num" type="number" name="ssr" min="0" max="5" step="0.1" value="3.5"/><br><br>
+
+        HSC Percentage: &nbsp;&nbsp;
+        <input class="content-num" type="number" name="hsc" min="50" max="100" step="1" value="50"/><br><br>
+
+        Extra Curricular Activities:
+
+        <input class="content-rad" type="radio" id="exa-yes" value="1" name="exa" checked/>
+        <label for="exa-yes"> Yes </label>
+        <input class="content-rad" type="radio" id="exa-no" value="0" name="exa"/>
+        <label for="exa-no"> No </label>
+        <br><br>
+
+        Placement Training:
+        <label for="train-yes">
+        <input class="content-rad" type="radio" id="train-yes" value="1" name="train" checked/> Yes </label>
+        <label for="train-no">
+        <input class="content-rad" type="radio" id="train-no" value="0" name="train"/> No </label>
+        <br><br>
 
         <input type="submit" value="Predict Placement">
     </form>
-
 </body>
 
 </html>

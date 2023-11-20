@@ -3,19 +3,80 @@
 
 <head>
     <title>Prediction Result</title>
-    <link rel="stylesheet" type="text/css" href="../static/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 
 <body class="res-body">
     <h1>Placement Prediction Result</h1>
-    <p>Dear <name class="name">{{name}}</name>, based on the provided information shown below, your placement status is predicted as:<br><br><br>
-        <strong> Email: </strong>{{email}} <br>
-        <strong> CGPA: </strong>{{cgpa}}  <br>
-        <strong> Speaking Skills: </strong>{{ss}} <br>
-        <strong> ML Knowledge: </strong>{{ml}} <br>
+    <p>Dear <name class="name">{{name}}</name> based on the provided information shown below, your placement status is predicted as:<br><br>
+        <table class="res-tbl">
+            <tr class="colspan">
+                <td colspan="2"> CGPA </td>
+                <td colspan="2"> {{cgpa}} </td>
+            </tr>
+            <tr>
+                <td> Internship </td>
+                <td> {{intern}} </td>
+                <td> Projects </td>
+                <td> {{projects}} </td>
+            </tr>
+            <tr>
+                <td> Certificate </td>
+                <td> {{certifs}} </td>
+                <td> Aptitude Score </td>
+                <td> {{apt}} </td>
+            </tr>
+            <tr>
+                <td> Soft Skills Rating </td>
+                <td> {{ssr}} </td>
+                <td> HSC Percentage </td>
+                <td> {{hsc}} </td>
+            </tr>
+            <tr>
+                <td> Extra Curricular Activity </td>
+                <td> {{exa}} </td>
+                <td> Placement Training </td>
+                <td> {{train}} </td>
+            </tr>
+            <tr class="colspan">
+                <td colspan="2"> Placement Status </td>
+                <td colspan="2"> {{prediction_result}} </td>
+            </tr>
+            <tr class="colspan">
+                <td colspan="2"> Probability of Placement </td>
+                <td colspan="2"> {{prediction_proba}}% </td>
+            </tr>
+        </table> <br><br><hr><br><br>
+    <!-- JavaScript function to handle data submission -->
+    <script>
+        function saveDataToCSV() {
+            fetch('/save_to_csv', {
+                method: 'POST',
+                body: new FormData(document.getElementById('resultForm')),
+            })
+            .then(response => response.text())
+            .then(message => alert(message))
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
 
-        <h3> Placement Status</h3>
-        <result> {{prediction_result}} </result>
+    <button onclick="saveDataToCSV()">Upload</button>
+
+    <!-- Add an invisible form to hold the result data -->
+    <form id="resultForm" style="display: none;">
+        <input type="text" name="name" value="{{name}}">
+        <input type="number" name="cgpa" value="{{cgpa}}">
+        <input type="number" name="intern" value="{{intern}}">
+        <input type="number" name="projects" value="{{projects}}">
+        <input type="number" name="certifs" value="{{certifs}}">
+        <input type="number" name="apt" value="{{apt}}">
+        <input type="number" name="ssr" value="{{ssr}}">
+        <input type="number" name="hsc" value="{{hsc}}">
+        <input type="text" name="exa" value="{{exa}}">
+        <input type="text" name="train" value="{{train}}">
+        <input type="text" name="prediction_result" value="{{prediction_result}}">
+        <input type="number" name="prediction_proba" value="{{prediction_proba}}">
+    </form>
 </body>
 
 </html>
